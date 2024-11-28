@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Apply a gradient background to the entire app */
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #FFF9C4, #FFEB3B); /* Light yellow to yellow gradient */
+  font-family: 'Poppins', sans-serif;
+  color: #000; /* Black text for better contrast */
   min-height: 100vh;
+}
+
+/* Center the main content both vertically and horizontally */
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center;    /* Center items horizontally */
+  text-align: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style the weather container */
+.weather-container {
+  background: rgba(255, 235, 59, 0.1); /* Semi-transparent yellow background */
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px 0 rgba(255, 235, 59, 0.37); /* Yellow shadow */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Style the search form */
+.search-form {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  font-size: 16px;
+  background-color: #FFF9C4; /* Light yellow input background */
+  color: #000; /* Black text */
+}
+
+.search-form button {
+  padding: 15px 20px;
+  background-color: #FFEB3B; /* Yellow button background */
+  color: #000; /* Black text */
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Change button hover effect */
+.search-form button:hover {
+  background-color: #FFF176; /* Lighter yellow on hover */
+}
+
+/* Style the weather information */
+.weather-info h2 {
+  margin: 20px 0;
+  font-size: 28px;
+}
+
+.weather-info img {
+  width: 120px;
+  height: 120px;
+}
+
+.weather-info p {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .weather-container {
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-form input,
+  .search-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .weather-info h2 {
+    font-size: 24px;
+  }
+
+  .weather-info p {
+    font-size: 18px;
   }
 }
